@@ -1,0 +1,13 @@
+record R {
+    int a;
+    int b;
+}
+
+R temp;
+
+int main() {
+    temp[a] = 1;
+    temp[b] = 2;
+    report temp[a];
+    report temp[b];
+}

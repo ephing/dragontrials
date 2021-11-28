@@ -1,0 +1,45 @@
+//.* (SKIP)
++|plus PLUS false
+-|minus MINUS false
+*|times TIMES false
+/|divide DIVIDE false
+[0-9]+ INTLITERAL true
+\n (SKIP)
+int INT false
+bool BOOL false
+string STRING false
+void VOID false
+if IF false
+else ELSE false
+while WHILE false
+return|we\'ll\_take\_our\_leave\_and\_go RETURN false
+true|aye TRUE false
+false|nay FALSE false
+receive RECEIVE false
+record RECORD false
+report REPORT false
+or|[|][|] OR false
+and|&& AND false
+\_ (SKIP)
+[[] LBRACE false
+] RBRACE false
+{|ahoy OPEN false
+}|shove\_off CLOSE false
+[(] LPAREN false
+[)] RPAREN false
+;|((heave|roll)(\_and\_go)) SEMICOL false
+, COMMA false
+-- DEC false
+++ INC false
+! NOT false
+== EQUALS false
+!= NOTEQUALS false
+< LESS false
+> GREATER false
+<= LESSEQ false
+>= GREATEREQ false
+=|gets ASSIGN false
+\"([^\\\"]|\\[nt\\\"])*\" STRLIT true
+\"([^\\\"]|\\[^nt\\\"])*\" (ERR) "Invalid Escape Sequence"
+\"([^\\\"]|\\[nt\\\"])*(\\\")? (ERR) "Unterminated string"
+[_a-zA-Z][a-zA-Z_0-9]* ID true

@@ -1,0 +1,18 @@
+
+string newline() {
+    return "\n";
+}
+
+int main() {
+    int x;
+    bool t;
+    bool f;
+    receive x;
+    receive t;
+    receive f;
+    report x;
+    report newline();
+    report t;
+    report newline();
+    report f;
+}

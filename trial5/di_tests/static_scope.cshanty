@@ -1,0 +1,18 @@
+int a;
+int b;
+a = 5;
+b = 2;
+
+int f() {
+    report b;
+    return a;
+}
+
+report f();
+
+int f2(int a) {
+    b = 3;
+    return f();
+}
+
+report f2(2);

@@ -1,0 +1,29 @@
+record Point {
+    int x;
+    int y;
+}
+
+string newline() {
+    //rather than directly saying report "\n" I made this function
+    //so that "\n" only appears in the .data section once
+    return "\n";
+}
+
+int main() {
+    Point p1;
+    Point p2;
+    p1[x] = 5;
+    report p1[x];
+    report newline();
+    while (p1[x] <= 9) {
+        p2[y] = p1[x] / 2 + 1;
+        p1[x] = p1[x] - 2 + p2[y];
+        report p2[y];
+        report newline();
+        report p1[x];
+        report newline();
+    }
+    p1[y] = p1[x] * p2[y]; 
+    report p1[y] + p2[y];
+    report newline();
+}

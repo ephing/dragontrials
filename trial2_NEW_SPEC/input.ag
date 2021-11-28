@@ -1,0 +1,24 @@
+Z ::= S #1
+S ::= N T
+T ::= + S #2
+    | 
+N ::= #3 [ E
+E ::= X ]
+    | ]
+X ::= #4 INTLIT B
+B ::= , X
+    |
+%%
+//this grammar does basic list concatenation
+#include <iostream>
+std::stack<std::vector<int>> semStack;
+std::vector<int> pop(){
+	std::vector<int> res = semStack.top();
+	semStack.pop();
+	return res;
+}
+%%
+#1 { std::vector<int> t = pop(); std::cout << "["; for (int i : t) std::cout << i << ","; std::cout << "]\n"; }
+#2 { std::vector<int> t2 = pop(); std::vector<int> t1 = pop(); for (int i : t2) t1.push_back(i); semStack.push(t1); }
+#3 { semStack.push(std::vector<int>()); }
+#4 { std::vector<int> t = pop(); t.push_back(std::atoi(look)); semStack.push(t); }

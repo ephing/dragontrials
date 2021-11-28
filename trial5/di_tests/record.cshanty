@@ -1,0 +1,34 @@
+record Vehicle {
+    int numWheels;
+    bool engine;
+}
+
+string type(Vehicle v) {
+    if (v[numWheels] == 4 && v[engine]) { return "car"; }
+    if (v[numWheels] == 3) {
+        if (!v[engine]) { return "tricycle"; }
+        else { we'll take our leave and go "motorized tricycle?"; }
+    }
+    if (v[numWheels] == 2 && v[engine]) { return "motorcycle"; }
+    if (v[numWheels] == 2 && !v[engine]) { return "bicycle"; }
+    if (v[numWheels] == 1) { return "unicycle"; }
+    return "???";
+}
+
+Vehicle car;
+Vehicle tricycle;
+Vehicle motorcycle;
+Vehicle unicycle;
+car[numWheels] = 4;
+car[engine] = true;
+tricycle[numWheels] = 3;
+tricycle[engine] = false;
+motorcycle[numWheels] = 2;
+motorcycle[engine] = true;
+unicycle[numWheels] = 1;
+unicycle[engine] = false;
+
+report type(car);
+report type(tricycle);
+report type(motorcycle);
+report type(unicycle);
