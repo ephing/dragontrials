@@ -19,3 +19,10 @@ Write an interpreter for the compiled language from the in class projects (CShan
 
 ## Trial 6
 Add a flag to the CShanty compiler to allow it to compile to MIPS in addition to x64.  
+
+## Trial 7
+Add 4 optimizations to CShanty compiler:  
+* Subtracting 1 uses decq instruction  
+* Instructions subtracting 0 and multiplying by 1 are removed  
+* Nops are removed  
+* Jumps to successor instructions are removed  
