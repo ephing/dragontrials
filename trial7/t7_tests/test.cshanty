@@ -1,0 +1,18 @@
+
+int f() { return 4; }
+
+int main() {
+    int b;
+    b = 1;
+    if (b == 0) {
+
+    } else {
+
+    }
+    while (b - 1 != 0) {
+
+    }
+    b = b * 1;
+    b = b - 0;
+    report f();
+}
