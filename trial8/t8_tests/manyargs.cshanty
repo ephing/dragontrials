@@ -1,0 +1,17 @@
+record A {
+    int a;
+    int b;
+}
+
+void func(int a, A b, int c, int d, int e, int f, int z, A g, int h) {
+    report g[b];
+    report "\n";
+    report h;
+}
+
+int main() {
+    A one;
+    A two;
+    two[b] = 8;
+    func(1,one,3,4,5,6,7,two,9);
+}

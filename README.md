@@ -26,3 +26,7 @@ Add 4 optimizations to CShanty compiler:
 * Instructions subtracting 0 and multiplying by 1 are removed  
 * Nops are removed  
 * Jumps to successor instructions are removed  
+
+## Trial 8
+Make CShanty compile to LLVM Bitcode  
+I may have cheated and made it transpile to C which already compiles to LLVM Bitcode :)  

@@ -1,0 +1,17 @@
+record Point {
+    int x;
+    int y;
+}
+
+int f(Point p) {
+    report p[x];
+    report "\n";
+    report p[y];
+}
+
+int main() {
+    Point p;
+    p[x] = 1;
+    p[y] = 2;
+    f(p);
+}
