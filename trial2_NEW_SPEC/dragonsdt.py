@@ -7,7 +7,7 @@ cfile = "translator.cpp"
 
 def main(filename):
     table = tablebuilder.table(reader.readGrammar(filename))
-    for x in table: print(x,table[x])
+    #for x in table: print(x,table[x])
     with open(cfile, "w") as file:
         file.write("#include <map>\n#include <vector>\n#include <fstream>\n#include <algorithm>\n#include <stack>\nconst char* look = \"\";\n")
         file.write(reader.initcode)

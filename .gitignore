@@ -1,0 +1,11 @@
+__pycache__
+*.dot
+*.png
+parser
+lexer
+badcodeDFA
+cshanty.spec.pleasegivemepoints
+*.zoinks
+*.o
+Mars.jar
+*.gdb

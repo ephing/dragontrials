@@ -1,4 +1,5 @@
 from tablebuilder import Grammar
+from functools import reduce
 
 initcode = ""
 actions = []
@@ -46,7 +47,8 @@ def readGrammar(filename):
         line = file.readline()
         while line != '':
             num = line.split(" ")[0][1:]
-            actions += ["\tcase " + num + ": {\n\t\t" + ' '.join(line.split(" ")[2:-1]) + "\n\t\treturn;\n\t}\n"]
+            line = reduce(lambda x, y: x + y, map(lambda x: "\t\t"+x+";\n", line[line.find("{")+2:].split("; ")[:-1]))
+            actions += ["\tcase " + num + ": {\n" + line + "\t\treturn;\n\t}\n"]
             line = file.readline().rstrip()
 
         return Grammar(terms, nonterms, prods, ac)

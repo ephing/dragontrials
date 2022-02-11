@@ -52,8 +52,7 @@ class Parser:
                 self.lookahead += 1
             #reduce
             else:
-                for _ in range(next[1]): self.stack = self.stack[1:]
-                self.stack = [table[self.stack[0]][next[0]]] + self.stack
+                self.stack = [table[self.stack[0]][next[0]]] + self.stack[next[1]:]
         print("rejected")
         exit(1)
 

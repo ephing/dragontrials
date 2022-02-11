@@ -10,7 +10,7 @@ build:
 # added the -d flag here so you don;t accidentally miss it but it technically should only be in
 # the make dot one
 run: $(GRAMFILE)
-	python3 main.py -d $<
+	python3 main.py $<
 	chmod +x parser
 
 test: $(TOKENFILE) run

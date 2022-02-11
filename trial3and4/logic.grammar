@@ -1,0 +1,20 @@
+\x19 := exp * \x18
+exp := term IFF a
+    | a
+a := term IF b
+    | b
+b := term OR c
+    | c
+c := term XOR d
+    | d
+d := term AND e
+    | e
+e := NOT f
+    | f
+    |
+f := EXISTS PROP term
+    | FORALL PROP term
+    | term
+term := LPAREN exp RPAREN
+    | PROP
+    | BOOL

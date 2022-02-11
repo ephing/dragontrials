@@ -11,10 +11,10 @@ class Seed:
         #to be seen
         self.b = b
     
-    def asStr(self):
+    def asStr(self) -> str:
         return self.z + " ::= " + ' '.join(self.a) + " ● " + ' '.join(self.b)
 
-    def getNext(self):
+    def getNext(self) -> str:
         if self.b != []: return self.b[0]
 
 class State:
@@ -32,10 +32,7 @@ class State:
                 if i.getNext() != None and i.getNext() in r.grammar.nonterms:
                     for p in r.grammar.prods[i.getNext()]:
                         s = Seed(i.getNext(),[],p)
-                        for x in self.items:
-                            if x.asStr() == s.asStr():
-                                break
-                        else:
+                        if s.asStr() not in list(map(lambda x: x.asStr(),self.items)):
                             self.items += [s]
 
         states.update({seed.asStr(): self})
@@ -74,6 +71,7 @@ class State:
             if i.getNext() == token and i.getNext() != r.EOF:
                 #make new seed with dot moved over 1
                 s = Seed(i.z,i.a + [i.b[0]], i.b[1:])
+                #print(i.asStr(), s.asStr())
                 if f == None:
                     f = s
                     #do not allow for duplicate states

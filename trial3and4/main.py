@@ -14,14 +14,17 @@ def main(filename):
         file.write("parser = p.Parser(sys.argv[1])\n")
         file.write("parser.parse()\n")
         
-if len(sys.argv) == 2:
-    main(sys.argv[1])
-elif len(sys.argv) == 3:
-    if sys.argv[1] == '-d':
-        main(sys.argv[2])
-        dotter.makedot()
-    else:
-        print("Your flag bad (-d to dot)")
-else:
-    print("Format: python3 main.py <-d> <.ag>")
+# if len(sys.argv) == 2:
+#     main(sys.argv[1])
+# elif len(sys.argv) == 3:
+#     if sys.argv[1] == '-d':
+#         main(sys.argv[2])
+#         dotter.makedot()
+#     else:
+#         print("Your flag bad (-d to dot)")
+# else:
+#     print("Format: python3 main.py <-d> <.ag>")
+
+main("/home/joemama/Documents/lastsem/compiler/dragontrials/trial3and4/logic.grammar")
+dotter.makedot()
 
